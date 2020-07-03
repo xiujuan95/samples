@@ -3,7 +3,7 @@ set -e
 
 ID_PREFIX="io.buildpacks.samples.stacks"
 
-DEFAULT_PREFIX=cnbs/sample-stack
+DEFAULT_PREFIX=cnbs/ubi-sample-stack
 
 REPO_PREFIX=${DEFAULT_PREFIX}
 
