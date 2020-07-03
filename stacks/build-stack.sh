@@ -57,15 +57,15 @@ BUILD_IMAGE=${REPO_PREFIX}-build:${TAG}
 docker build -t "${BASE_IMAGE}" "${IMAGE_DIR}/base"
 
 echo "BUILDING ${BUILD_IMAGE}..."
-docker build --build-arg "base_image=${BASE_IMAGE}" --build-arg "stack_id=${STACK_ID}" -t "${BUILD_IMAGE}"  "${IMAGE_DIR}/build"
+docker build --build-arg "base_image=${BASE_IMAGE}" --build-arg "stack_id=org.cloudfoundry.stacks.cflinuxfs3" -t "${BUILD_IMAGE}"  "${IMAGE_DIR}/build"
 
 echo "BUILDING ${RUN_IMAGE}..."
-docker build --build-arg "base_image=${BASE_IMAGE}" --build-arg "stack_id=${STACK_ID}" -t "${RUN_IMAGE}" "${IMAGE_DIR}/run"
+docker build --build-arg "base_image=${BASE_IMAGE}" --build-arg "stack_id=org.cloudfoundry.stacks.cflinuxfs3" -t "${RUN_IMAGE}" "${IMAGE_DIR}/run"
 
 echo
 echo "STACK BUILT!"
 echo
-echo "Stack ID: ${STACK_ID}"
+echo "Stack ID: org.cloudfoundry.stacks.cflinuxfs3"
 echo "Images:"
 for IMAGE in "${BASE_IMAGE}" "${BUILD_IMAGE}" "${RUN_IMAGE}"; do
   echo "    ${IMAGE}"
